@@ -21,7 +21,17 @@ function App() {
     {
       rowNumber : 3,
       rowDescription : "Buy cake",
-      rowAssigned : "John"
+      rowAssigned : "John"  
+    },
+    {
+      rowNumber : 4,
+      rowDescription : "Make Dinner",
+      rowAssigned : "John"  
+    },
+    {
+      rowNumber : 5,
+      rowDescription : "Charge Phone battery",
+      rowAssigned : "Robin"  
     }
 
   ];
