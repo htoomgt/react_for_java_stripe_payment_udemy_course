@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ToDoRowItem from './components/ToDoRowItem'
+import TodoTable from './components/TodoTable'
 
 
 function App() {
@@ -33,22 +34,7 @@ function App() {
           
         </div>
         <div className="card-body">
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope='col'>#</th>
-              <th scope='col'>Description</th>
-              <th scope='col'>Assigned</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              todos.map((todo) => {
-                return <ToDoRowItem todo={todo} key={todo.rowNumber} />
-              })
-            }
-          </tbody>
-        </table>
+            <TodoTable todos={todos}/>
         </div>
         
       </div>
