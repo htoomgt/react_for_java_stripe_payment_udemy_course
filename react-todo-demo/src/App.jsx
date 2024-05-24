@@ -3,16 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className='mt-5 container'>
+      <div className="card">
+        <div className="card-header">
           Your Todo's
+          
         </div>
-        <table>
+        <div className="card-body">
+        <table className="table table-hover">
           <thead>
             <tr>
               <th scope='col'>#</th>
@@ -33,6 +36,8 @@ function App() {
             </tr>
           </tbody>
         </table>
+        </div>
+        
       </div>
     </div>
   )
