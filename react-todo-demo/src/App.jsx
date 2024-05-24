@@ -5,7 +5,7 @@ import './App.css'
 import ToDoRowItem from './components/ToDoRowItem'
 import TodoTable from './components/TodoTable'
 
-const todos = [
+const defaultTodos = [
   {
     rowNumber : 1,
     rowDescription : "Feed Dog",
@@ -36,13 +36,15 @@ const todos = [
 
 
 function App() {
+
+  const [todos, setTodos] = useState(defaultTodos);
   
 
   const addToDo = () => {
       console.log("Add new to do button was clicked!");
       if(todos.length > 0){
-        const newTodo = {rowNumber: todos.lenght + 1, rowDescription : "New Todo", rowAssigned : "user 3"}
-        todos.push(newTodo);
+        const newTodo = {rowNumber: todos.length + 1, rowDescription : "New Todo", rowAssigned : "user 3"}
+        setTodos((prevState) => [...prevState, newTodo]);
         console.log(todos);
       }
   }
