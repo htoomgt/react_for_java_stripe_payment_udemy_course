@@ -6,7 +6,24 @@ import ToDoRowItem from './components/ToDoRowItem'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const todos = [
+    {
+      rowNumber : 1,
+      rowDescription : "Feed Dog",
+      rowAssigned : "Eric"
+    },
+    {
+      rowNumber : 2,
+      rowDescription : "Hiarcut",
+      rowAssigned : "Robin"
+    },
+    {
+      rowNumber : 3,
+      rowDescription : "Buy cake",
+      rowAssigned : "John"
+    }
+
+  ];
 
   return (
     <div className='mt-5 container'>
@@ -25,13 +42,11 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <ToDoRowItem />
-            <ToDoRowItem />
-            <tr>
-              <th scope='row '>2</th>
-              <td>Get haircut</td>
-              <td>Eric</td>
-            </tr>
+            {
+              todos.map((todo) => {
+                return <ToDoRowItem todo={todo} key={todo.rowNumber} />
+              })
+            }
           </tbody>
         </table>
         </div>
