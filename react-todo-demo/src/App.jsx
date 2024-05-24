@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ToDoRowItem from './components/ToDoRowItem'
 
 
 function App() {
@@ -24,11 +25,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row '>1</th>
-              <td>Feed dog</td>
-              <td>Eric</td>
-            </tr>
+            <ToDoRowItem />
             <tr>
               <th scope='row '>2</th>
               <td>Get haircut</td>
