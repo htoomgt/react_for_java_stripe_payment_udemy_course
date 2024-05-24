@@ -5,36 +5,47 @@ import './App.css'
 import ToDoRowItem from './components/ToDoRowItem'
 import TodoTable from './components/TodoTable'
 
+const todos = [
+  {
+    rowNumber : 1,
+    rowDescription : "Feed Dog",
+    rowAssigned : "Eric"
+  },
+  {
+    rowNumber : 2,
+    rowDescription : "Hiarcut",
+    rowAssigned : "Robin"
+  },
+  {
+    rowNumber : 3,
+    rowDescription : "Buy cake",
+    rowAssigned : "John"  
+  },
+  {
+    rowNumber : 4,
+    rowDescription : "Make Dinner",
+    rowAssigned : "John"  
+  },
+  {
+    rowNumber : 5,
+    rowDescription : "Charge Phone battery",
+    rowAssigned : "Robin"  
+  }
+
+];
+
 
 function App() {
-  const todos = [
-    {
-      rowNumber : 1,
-      rowDescription : "Feed Dog",
-      rowAssigned : "Eric"
-    },
-    {
-      rowNumber : 2,
-      rowDescription : "Hiarcut",
-      rowAssigned : "Robin"
-    },
-    {
-      rowNumber : 3,
-      rowDescription : "Buy cake",
-      rowAssigned : "John"  
-    },
-    {
-      rowNumber : 4,
-      rowDescription : "Make Dinner",
-      rowAssigned : "John"  
-    },
-    {
-      rowNumber : 5,
-      rowDescription : "Charge Phone battery",
-      rowAssigned : "Robin"  
-    }
+  
 
-  ];
+  const addToDo = () => {
+      console.log("Add new to do button was clicked!");
+      if(todos.length > 0){
+        const newTodo = {rowNumber: todos.lenght + 1, rowDescription : "New Todo", rowAssigned : "user 3"}
+        todos.push(newTodo);
+        console.log(todos);
+      }
+  }
 
   return (
     <div className='mt-5 container'>
@@ -45,6 +56,7 @@ function App() {
         </div>
         <div className="card-body">
             <TodoTable todos={todos}/>
+            <button className='btn btn-primary' onClick={addToDo}> Add new todo</button>
         </div>
         
       </div>
