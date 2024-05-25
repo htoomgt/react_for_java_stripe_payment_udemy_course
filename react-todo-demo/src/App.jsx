@@ -40,6 +40,7 @@ const defaultTodos = [
 function App() {
 
   const [todos, setTodos] = useState(defaultTodos);
+  const [formToggleStatus, setFormTogglestatus]  = useState(false);
   
 
   const addToDo = (newTodo) => {
@@ -64,6 +65,10 @@ function App() {
     console.log(updatedTodos);
   }
 
+  const toggleFormOpenClose = () => {
+    setFormTogglestatus(!formToggleStatus);
+  }
+
   return (
     <div className='mt-5 container'>
       <div className="card">
@@ -73,8 +78,9 @@ function App() {
         </div>
         <div className="card-body">
             <TodoTable todos={todos} deleteTodo={deleteTodo}/>
-            <button className='btn btn-primary' onClick={addToDo}> Add new todo</button>
-            <NewToDoForm fnAddToDo={addToDo} />
+            <button className='btn btn-primary' onClick={toggleFormOpenClose}> Add new todo</button>
+
+            {formToggleStatus && <NewToDoForm fnAddToDo={addToDo} />}
         </div>
         
       </div>
