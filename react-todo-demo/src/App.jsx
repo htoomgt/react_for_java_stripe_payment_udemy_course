@@ -78,7 +78,7 @@ function App() {
         </div>
         <div className="card-body">
             <TodoTable todos={todos} deleteTodo={deleteTodo}/>
-            <button className='btn btn-primary' onClick={toggleFormOpenClose}> Add new todo</button>
+            <button className='btn btn-primary' onClick={toggleFormOpenClose}> {!formToggleStatus ? 'Add New Todo' : 'Close New To Do'}</button>
 
             {formToggleStatus && <NewToDoForm fnAddToDo={addToDo} fnToggleFormOpenClose={toggleFormOpenClose} />}
         </div>
