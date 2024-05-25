@@ -88,6 +88,7 @@ const NewToDoForm = (props) => {
             setFormData(formInitialData);
             setFormErrMsg(initFormErrorMsgs);            
             setDidFormSubmit(false);
+            props.fnToggleFormOpenClose();
         }
         console.log(formData);
 

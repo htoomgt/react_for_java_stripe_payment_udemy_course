@@ -80,7 +80,7 @@ function App() {
             <TodoTable todos={todos} deleteTodo={deleteTodo}/>
             <button className='btn btn-primary' onClick={toggleFormOpenClose}> Add new todo</button>
 
-            {formToggleStatus && <NewToDoForm fnAddToDo={addToDo} />}
+            {formToggleStatus && <NewToDoForm fnAddToDo={addToDo} fnToggleFormOpenClose={toggleFormOpenClose} />}
         </div>
         
       </div>
