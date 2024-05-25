@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import ToDoRowItem from './components/ToDoRowItem'
-import TodoTable from './components/TodoTable'
+import ToDoRowItem from './components/ToDoRowItem';
+import TodoTable from './components/TodoTable';
+import NewToDoForm from './components/NewToDoForm';
 
 const defaultTodos = [
   {
@@ -59,6 +60,7 @@ function App() {
         <div className="card-body">
             <TodoTable todos={todos}/>
             <button className='btn btn-primary' onClick={addToDo}> Add new todo</button>
+            <NewToDoForm />
         </div>
         
       </div>
