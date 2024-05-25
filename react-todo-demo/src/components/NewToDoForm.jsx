@@ -17,7 +17,7 @@ const NewToDoForm = (props) => {
     const [formData, setFormData] = useState(formInitialData);
     const [formErrorMsg, setFormErrMsg] = useState(initFormErrorMsgs);
     const [didFormSubmit, setDidFormSubmit] = useState(false);
-    const [validFormStatus, setValidFormStatus] = useState(false);
+    
 
     const onChangeInput = (e) => {
 
@@ -35,54 +35,58 @@ const NewToDoForm = (props) => {
     
 
     const checkFormValidation = () => {
+
+            let formValidationStatus = false;
         
             if(formData.rowAssigned == ""){
                 formErrorMsg.rowAssignedErrMsg = "Assigned is mssing";
                 setFormErrMsg(formErrorMsg);
-                setValidFormStatus(false);
+                formValidationStatus = false;
                 console.log("row assigned value is missing", validFormStatus);
             }
             else{
                 formErrorMsg.rowAssignedErrMsg = "";
                 setFormErrMsg(formErrorMsg);                
-                setValidFormStatus(true);
+                formValidationStatus = true;
             }
 
             if(formData.rowDescription == ""){
                 formErrorMsg.rowDescriptionErrMsg = "Description is missing!";
                 setFormErrMsg(formErrorMsg);
-                setValidFormStatus(false);
+                formValidationStatus = false;
             }
             else if(formData.rowDescription.length <= 5 ){
                 formErrorMsg.rowDescriptionErrMsg = "Description should be at least 5 characters";
                 setFormErrMsg(formErrorMsg);
-                setValidFormStatus(false);
+                formValidationStatus = false;
             }
             else{
                 formErrorMsg.rowDescriptionErrMsg = "";
                 setFormErrMsg(formErrorMsg);
-                setValidFormStatus(true);
+                formValidationStatus = true;
             }
        
 
         console.log(formErrorMsg);
-        console.log("valid form",validFormStatus);
+        console.log("valid form",formValidationStatus);
+        
+        return formValidationStatus;
     }
 
     const onClickAddToDo = (e) => {
         e.preventDefault();       
         
-        checkFormValidation();
-        setTimeout(setDidFormSubmit(true), 1000);
+        
+        setDidFormSubmit(true);
+        
 
         
 
-        if(validFormStatus){
+        if(checkFormValidation()){
             formData.rowNumber = uuid();            
             props.fnAddToDo(formData);
             setFormData(formInitialData);
-            setFormErrMsg(initFormErrorMsgs);
-            setValidFormStatus(false);
+            setFormErrMsg(initFormErrorMsgs);            
             setDidFormSubmit(false);
         }
         console.log(formData);

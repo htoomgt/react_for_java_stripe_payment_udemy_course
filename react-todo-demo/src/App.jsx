@@ -50,6 +50,20 @@ function App() {
       }
   }
 
+  const deleteTodo = (id) => {
+
+    const updatedTodos = todos.filter((todo) => {
+      if(todo.rowNumber != id ){
+        return todo;
+      }
+    })
+
+
+    setTodos(updatedTodos);
+
+    console.log(updatedTodos);
+  }
+
   return (
     <div className='mt-5 container'>
       <div className="card">
@@ -58,7 +72,7 @@ function App() {
           
         </div>
         <div className="card-body">
-            <TodoTable todos={todos}/>
+            <TodoTable todos={todos} deleteTodo={deleteTodo}/>
             <button className='btn btn-primary' onClick={addToDo}> Add new todo</button>
             <NewToDoForm fnAddToDo={addToDo} />
         </div>
