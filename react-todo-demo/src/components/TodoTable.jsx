@@ -18,8 +18,8 @@ const TodoTable = (prop) => {
           </thead>
           <tbody>
             {
-              todos.map((todo) => {
-                return <ToDoRowItem todo={todo} key={todo.rowNumber} />
+              todos.map((todo, index) => {
+                return <ToDoRowItem todo={todo} key={todo.rowNumber} index={index} />
               })
             }
           </tbody>

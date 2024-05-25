@@ -5,30 +5,31 @@ import './App.css'
 import ToDoRowItem from './components/ToDoRowItem';
 import TodoTable from './components/TodoTable';
 import NewToDoForm from './components/NewToDoForm';
+import uuid from 'react-uuid';
 
 const defaultTodos = [
   {
-    rowNumber : 1,
+    rowNumber : uuid(),
     rowDescription : "Feed Dog",
     rowAssigned : "Eric"
   },
   {
-    rowNumber : 2,
+    rowNumber : uuid(),
     rowDescription : "Hiarcut",
     rowAssigned : "Robin"
   },
   {
-    rowNumber : 3,
+    rowNumber : uuid(),
     rowDescription : "Buy cake",
     rowAssigned : "John"  
   },
   {
-    rowNumber : 4,
+    rowNumber : uuid(),
     rowDescription : "Make Dinner",
     rowAssigned : "John"  
   },
   {
-    rowNumber : 5,
+    rowNumber : uuid(),
     rowDescription : "Charge Phone battery",
     rowAssigned : "Robin"  
   }
@@ -41,11 +42,10 @@ function App() {
   const [todos, setTodos] = useState(defaultTodos);
   
 
-  const addToDo = () => {
+  const addToDo = (newTodo) => {
       console.log("Add new to do button was clicked!");
       if(todos.length > 0){
-        const newTodo = {rowNumber: todos.length + 1, rowDescription : "New Todo", rowAssigned : "user 3"}
-        setTodos((prevState) => [...prevState, newTodo]);
+        setTodos((preState) => [...preState, newTodo])
         console.log(todos);
       }
   }
@@ -60,7 +60,7 @@ function App() {
         <div className="card-body">
             <TodoTable todos={todos}/>
             <button className='btn btn-primary' onClick={addToDo}> Add new todo</button>
-            <NewToDoForm />
+            <NewToDoForm fnAddToDo={addToDo} />
         </div>
         
       </div>

@@ -1,17 +1,17 @@
 import React from 'react'
 
-const ToDoRowItem = (prop) => {
+const ToDoRowItem = (props) => {
     // const rowNumber = 1;
     // const rowDescription =  "Feed dog";
     // const rowAssigned =  "Eric";
 
-    const rowNumber = prop.todo.rowNumber ;
-    const rowDescription = prop.todo.rowDescription ;
-    const rowAssigned = prop.todo.rowAssigned ;
+    // const rowNumber = prop.todo.rowNumber ;
+    const rowDescription = props.todo.rowDescription ;
+    const rowAssigned = props.todo.rowAssigned ;
 
   return (
     <tr>
-        <th scope="row">{rowNumber}</th>
+        <th scope="row">{props.index}</th>
         <td> {rowDescription}</td>
         <td> {rowAssigned}</td>
     </tr>
