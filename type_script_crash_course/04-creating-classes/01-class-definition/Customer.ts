@@ -1,18 +1,36 @@
 class Customer {
-    firstName: string;
-    lastName: string;
+    private _firstName: string;
+    private _lastName: string;
 
     constructor(theFirst: string, theLast: string) {
-        this.firstName = theFirst;
-        this.lastName = theLast;
+        this._firstName = theFirst;
+        this._lastName = theLast;
+    }
+
+    public getFirstName(): string {
+        return this._firstName;
+    }
+
+    public setFirstName(value: string) {
+        this._firstName = value;
+    }
+
+    public getLastName(): string {
+        return this._lastName;
+    }
+
+    public setLastName(value: string) {
+        this._lastName = value;
     }
 }
 
 // let's create an instance
 let myCustomer = new Customer("Martin", "Dixon");
 
+
+
 /*myCustomer.firstName = "Martin";
 myCustomer.lastName = "Dixon";*/
 
-console.log(myCustomer.firstName);
-console.log(myCustomer.lastName);
+console.log(myCustomer.getFirstName());
+console.log(myCustomer.getLastName());
