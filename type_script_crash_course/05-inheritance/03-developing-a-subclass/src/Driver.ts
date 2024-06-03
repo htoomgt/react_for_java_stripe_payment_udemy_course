@@ -5,7 +5,7 @@ import { Rectangle } from "./Rectangle";
 let myShape = new Shape(10, 15);
 console.log(myShape.getInfo());
 
-let myCircle = new Circle(5, 10, 20);
+let myCircle = new Circle(5, 10, 21);
 console.log(myCircle.getInfo());
 
 let myRectangle = new Rectangle(3, 2, 5, 7);

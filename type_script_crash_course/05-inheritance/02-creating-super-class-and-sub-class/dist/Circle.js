@@ -9,8 +9,14 @@ class Circle extends Shape_1.Shape {
         this._theY = _theY;
         this._radius = _radius;
     }
+    get radius() {
+        return this._radius;
+    }
+    set radius(value) {
+        this._radius = value;
+    }
     getInfo() {
-        return super.getInfo() + `, radius=${this._radius}`;
+        return super.getInfo() + `, radius=${this.radius}`;
     }
 }
 exports.Circle = Circle;
