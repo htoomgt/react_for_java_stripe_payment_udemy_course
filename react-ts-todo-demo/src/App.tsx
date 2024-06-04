@@ -1,38 +1,21 @@
 import { useState } from 'react'
 import './App.css'
-import ToDoRowItem from './components/ToDoRowItem';
 import TodoTable from './components/TodoTable';
 import NewToDoForm from './components/NewToDoForm';
 import uuid from 'react-uuid';
+import { Todo } from './DTOs/Todo';
 
-const defaultTodos = [
-  {
-    rowNumber : uuid(),
-    rowDescription : "Feed Dog",
-    rowAssigned : "Eric"
-  },
-  {
-    rowNumber : uuid(),
-    rowDescription : "Hiarcut",
-    rowAssigned : "Robin"
-  },
-  {
-    rowNumber : uuid(),
-    rowDescription : "Buy cake",
-    rowAssigned : "John"  
-  },
-  {
-    rowNumber : uuid(),
-    rowDescription : "Make Dinner",
-    rowAssigned : "John"  
-  },
-  {
-    rowNumber : uuid(),
-    rowDescription : "Charge Phone battery",
-    rowAssigned : "Robin"  
-  }
+const defaultTodos : Todo[] = [
+  new Todo(uuid(), "Feed Dog", "Eric"),
+  new Todo(uuid(), "Hiarcut", "Robin"),
+  new Todo(uuid(), "Buy cake", "John"),
+  new Todo(uuid(), "Make Dinner", "John"),
+  new Todo(uuid(), "Charge Phone Battery", "Robin")
 
 ];
+
+
+
 
 
 function App() {
@@ -41,7 +24,7 @@ function App() {
   const [formToggleStatus, setFormTogglestatus]  = useState(false);
   
 
-  const addToDo = (newTodo) => {
+  const addToDo = (newTodo : Todo) => {
       console.log("Add new to do button was clicked!");
       if(todos.length > 0){
         setTodos((preState) => [...preState, newTodo])
@@ -49,7 +32,7 @@ function App() {
       }
   }
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id : string) : void => {
 
     const updatedTodos = todos.filter((todo) => {
       if(todo.rowNumber != id ){

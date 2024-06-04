@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import  {useState} from 'react'
 import uuid from 'react-uuid';
 
-const NewToDoForm = (props) => {
+const NewToDoForm = (props : any) => {
     const formInitialData = {
         rowNumber : "",
         rowDescription : "",
@@ -18,7 +18,7 @@ const NewToDoForm = (props) => {
     const [didFormSubmit, setDidFormSubmit] = useState(false);
     
 
-    const onChangeInput = (e) => {
+    const onChangeInput = (e : any) => {
 
         setFormData({...formData, [e.target.id] : e.target.value});
 
@@ -72,7 +72,7 @@ const NewToDoForm = (props) => {
         return formValidationStatus;
     }
 
-    const onClickAddToDo = (e) => {
+    const onClickAddToDo = (e : any) => {
         e.preventDefault();       
         
         
