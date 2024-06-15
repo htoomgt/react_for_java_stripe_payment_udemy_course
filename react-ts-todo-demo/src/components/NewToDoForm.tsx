@@ -1,7 +1,11 @@
 import  {useState} from 'react'
 import uuid from 'react-uuid';
 
-const NewToDoForm = (props : any) => {
+const NewToDoForm = (props : {
+    fnAddToDo : Function,
+    fnToggleFormOpenClose : Function
+
+}) => {
     const formInitialData = {
         rowNumber : "",
         rowDescription : "",
@@ -33,7 +37,7 @@ const NewToDoForm = (props : any) => {
 
     
 
-    const checkFormValidation = () => {
+    const checkFormValidation = () : boolean => {
 
             let formValidationStatus = false;
         

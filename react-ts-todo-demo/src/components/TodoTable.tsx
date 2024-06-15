@@ -2,7 +2,7 @@ import ToDoRowItem from './ToDoRowItem';
 import { Todo } from '../DTOs/Todo';
 
 
-const TodoTable = (props : any) => {
+const TodoTable = (props : { todos : Todo[], deleteTodo : Function}) => {
   const todos = props.todos;
 
     

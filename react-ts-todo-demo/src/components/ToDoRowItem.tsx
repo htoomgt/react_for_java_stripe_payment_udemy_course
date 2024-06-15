@@ -3,9 +3,7 @@ import { Todo } from "../DTOs/Todo";
 const ToDoRowItem = (props : {
   index : number,
   todo : Todo,
-  deleteItem : (rowNumber : string) => {},
-  // deleteItem : Function
-}) => {
+  deleteItem : Function}) => {
     // const rowNumber = 1;
     // const rowDescription =  "Feed dog";
     // const rowAssigned =  "Eric";
@@ -14,7 +12,7 @@ const ToDoRowItem = (props : {
     const rowDescription = props.todo.rowDescription ;
     const rowAssigned = props.todo.rowAssigned ;
 
-    const deleteItem = (e : any) => {
+    const deleteItem = (e : any) : void => {
       e.preventDefault();
       console.log(rowNumber);
       props.deleteItem(rowNumber);
