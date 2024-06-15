@@ -1,5 +1,11 @@
+import { Todo } from "../DTOs/Todo";
 
-const ToDoRowItem = (props : any) => {
+const ToDoRowItem = (props : {
+  index : number,
+  todo : Todo,
+  deleteItem : (rowNumber : string) => {},
+  // deleteItem : Function
+}) => {
     // const rowNumber = 1;
     // const rowDescription =  "Feed dog";
     // const rowAssigned =  "Eric";
