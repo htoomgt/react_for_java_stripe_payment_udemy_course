@@ -1,7 +1,13 @@
-import React, {useState} from 'react'
+import  {useState} from 'react'
 import uuid from 'react-uuid';
+import React from 'react';
 
-const NewToDoForm = (props) => {
+interface NewToDoForm {
+    fnAddToDo : Function,
+    fnToggleFormOpenClose : Function
+};
+
+export const NewToDoForm : React.FC<NewToDoForm> = (props) => {
     const formInitialData = {
         rowNumber : "",
         rowDescription : "",
@@ -18,7 +24,7 @@ const NewToDoForm = (props) => {
     const [didFormSubmit, setDidFormSubmit] = useState(false);
     
 
-    const onChangeInput = (e) => {
+    const onChangeInput = (e : any) => {
 
         setFormData({...formData, [e.target.id] : e.target.value});
 
@@ -33,7 +39,7 @@ const NewToDoForm = (props) => {
 
     
 
-    const checkFormValidation = () => {
+    const checkFormValidation = () : boolean => {
 
             let formValidationStatus = false;
         
@@ -72,7 +78,7 @@ const NewToDoForm = (props) => {
         return formValidationStatus;
     }
 
-    const onClickAddToDo = (e) => {
+    const onClickAddToDo = (e : any) => {
         e.preventDefault();       
         
         
@@ -115,4 +121,3 @@ const NewToDoForm = (props) => {
   )
 }
 
-export default NewToDoForm
