@@ -1,11 +1,13 @@
 import  {useState} from 'react'
 import uuid from 'react-uuid';
+import React from 'react';
 
-const NewToDoForm = (props : {
+interface NewToDoForm {
     fnAddToDo : Function,
     fnToggleFormOpenClose : Function
+};
 
-}) => {
+export const NewToDoForm : React.FC<NewToDoForm> = (props) => {
     const formInitialData = {
         rowNumber : "",
         rowDescription : "",
@@ -119,4 +121,3 @@ const NewToDoForm = (props : {
   )
 }
 
-export default NewToDoForm

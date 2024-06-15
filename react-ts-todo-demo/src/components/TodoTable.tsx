@@ -1,8 +1,10 @@
-import ToDoRowItem from './ToDoRowItem';
+import { ToDoRowItem } from './ToDoRowItem';
 import { Todo } from '../DTOs/Todo';
+import React from 'react';
 
+interface TodoTableProps { todos : Todo[], deleteTodo : Function}
 
-const TodoTable = (props : { todos : Todo[], deleteTodo : Function}) => {
+const TodoTable : React.FC<TodoTableProps> = (props ) => {
   const todos = props.todos;
 
     

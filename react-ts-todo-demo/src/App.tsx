@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import TodoTable from './components/TodoTable';
-import NewToDoForm from './components/NewToDoForm';
+import { NewToDoForm } from './components/NewToDoForm';
 import uuid from 'react-uuid';
 import { Todo } from './DTOs/Todo';
 
@@ -18,7 +18,7 @@ const defaultTodos : Todo[] = [
 
 
 
-function App() {
+export const App = () => {
 
   const [todos, setTodos] = useState(defaultTodos);
   const [formToggleStatus, setFormTogglestatus]  = useState(false);
@@ -69,4 +69,4 @@ function App() {
   )
 }
 
-export default App
+

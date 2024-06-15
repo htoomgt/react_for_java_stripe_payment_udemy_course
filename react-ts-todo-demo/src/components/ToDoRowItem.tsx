@@ -1,9 +1,12 @@
 import { Todo } from "../DTOs/Todo";
 
-const ToDoRowItem = (props : {
+interface ToDoRowItemProps {
   index : number,
   todo : Todo,
-  deleteItem : Function}) => {
+  deleteItem : Function
+}
+
+export  const ToDoRowItem : React.FC<ToDoRowItemProps> = (props ) => {
     // const rowNumber = 1;
     // const rowDescription =  "Feed dog";
     // const rowAssigned =  "Eric";
@@ -30,4 +33,3 @@ const ToDoRowItem = (props : {
   )
 }
 
-export default ToDoRowItem
